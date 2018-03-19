@@ -51,6 +51,12 @@ class Base_Controller extends CI_Controller {
 
         $this->data['home_label'] = $this->data['title'];
 
+        // CSS
+        $this->data['stylesheets'] = $this->config->item('stylesheets');
+        foreach ($this->data['stylesheets'] as &$style) {
+            $style['link'] = base_url() . 'public/css/' . $style['link'];
+        }
+
         // TODO menubar
         $navbar_links = $this->config->item('navbar_links');
         foreach ($navbar_links as &$navbar_item) {

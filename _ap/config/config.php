@@ -3,18 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
-| Navbar links
-|--------------------------------------------------------------------------
-|
-| Navbar links associated with their URLs.
-|
-*/
-$config['navbar_links'] = array(
-    array('name' => 'Courses', 'link' => '/courses'),
-    array('name' => 'Quizz', 'link' => '/quizz')
-);
-/*
-|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
@@ -533,3 +521,28 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+/*
+|--------------------------------------------------------------------------
+| Navbar links
+|--------------------------------------------------------------------------
+|
+| Navbar links associated with their URLs.
+|
+*/
+$config['navbar_links'] = array(
+    array('name' => 'Courses', 'link' => '/courses'),
+    array('name' => 'Quizz', 'link' => '/quizz')
+);
+
+/*
+|--------------------------------------------------------------------------
+| CSS Paths
+|--------------------------------------------------------------------------
+|
+| CSS Paths relative to the CSS_BASE_PATH folder.
+|
+*/
+$config['stylesheets'] = array(
+  array('link' => 'common.css')
+);
