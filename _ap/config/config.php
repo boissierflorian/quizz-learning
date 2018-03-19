@@ -540,9 +540,24 @@ $config['navbar_links'] = array(
 | CSS Paths
 |--------------------------------------------------------------------------
 |
-| CSS Paths relative to the CSS_BASE_PATH folder.
+| CSS Paths.
 |
 */
 $config['stylesheets'] = array(
-  array('link' => 'common.css')
+    array('link' => 'w3'),
+    array('link' => 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'),
+    array('link' => 'common')
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Javascript Paths
+|--------------------------------------------------------------------------
+|
+| Javascript paths.
+|
+*/
+$config['scripts'] = array(
+    array('link' => 'common'),
 );

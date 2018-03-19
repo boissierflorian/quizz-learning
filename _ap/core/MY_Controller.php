@@ -48,22 +48,10 @@ class Base_Controller extends CI_Controller {
         if (! isset($this->data['pagetitle']))
             $this->data['pagetitle'] = $this->data['title'];
 
-
         $this->data['home_label'] = $this->data['title'];
 
-        // CSS
-        $this->data['stylesheets'] = $this->config->item('stylesheets');
-        foreach ($this->data['stylesheets'] as &$style) {
-            $style['link'] = base_url() . 'public/css/' . $style['link'];
-        }
+        $this->_build_links();
 
-        // TODO menubar
-        $navbar_links = $this->config->item('navbar_links');
-        foreach ($navbar_links as &$navbar_item) {
-            $navbar_item['link'] = base_url($navbar_item['link']);
-        }
-
-        $this->data['navbar_links'] = $navbar_links;
         $this->data['navbar'] = $this->parser->parse('templates/navbar', $this->data, true);
         $this->data['content'] = $this->parser->parse($this->data['pagebody'], $this->data, true);
         $this->data['footer'] = $this->parser->parse('templates/footer', $this->data, true);
@@ -71,5 +59,42 @@ class Base_Controller extends CI_Controller {
 
         $this->data['data'] = &$this->data;
         $this->parser->parse('templates/base', $this->data);
+    }
+
+    /**
+     * Generate template links.
+     */
+    private function _build_links() {
+        // CSS
+        $this->data['stylesheets'] = $this->config->item('stylesheets');
+
+        foreach ($this->data['stylesheets'] as &$style)
+        {
+            if ( ! is_external_url($style['link']))
+            {
+                $style['link'] = folder_url('public/css', $style['link'], 'css');
+            }
+        }
+
+        // Javascript
+        $this->data['scripts'] = $this->config->item('scripts');
+
+        foreach ($this->data['scripts'] as &$script)
+        {
+            if ( ! is_external_url($script['link']))
+            {
+                $script['link'] = folder_url('public/js', $script['link'], 'js');
+            }
+        }
+
+
+        // TODO Navbar
+        $navbar_links = $this->config->item('navbar_links');
+        foreach ($navbar_links as &$navbar_item)
+        {
+            $navbar_item['link'] = base_url($navbar_item['link']);
+        }
+
+        $this->data['navbar_links'] = $navbar_links;
     }
 }
