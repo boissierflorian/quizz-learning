@@ -1,9 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends Base_Controller {
     public function index() {
-        $this->load->view('templates/base');
-        $this->load->view('home/index');
+        $this->data['pagetitle'] = "Page d'accueil";
+        $this->data['pagebody'] = "home/index";
+
+        $this->render();
     }
 }

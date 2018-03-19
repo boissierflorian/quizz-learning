@@ -3,6 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
 |--------------------------------------------------------------------------
+| Navbar links
+|--------------------------------------------------------------------------
+|
+| Navbar links associated with their URLs.
+|
+*/
+$config['navbar_links'] = array(
+    array('name' => 'Courses', 'link' => '/courses'),
+    array('name' => 'Quizz', 'link' => '/quizz')
+);
+/*
+|--------------------------------------------------------------------------
 | Base Site URL
 |--------------------------------------------------------------------------
 |
