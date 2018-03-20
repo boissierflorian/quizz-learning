@@ -8,7 +8,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * user sessions, default views, etc.
  *
  */
-class Base_Controller extends CI_Controller {
+require_once APPPATH . 'third_party/community_auth/core/Auth_Controller.php';
+
+class MY_Controller extends Auth_Controller {
     /**
      * Shared data among controllers.
      *
