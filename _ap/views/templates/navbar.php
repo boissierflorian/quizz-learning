@@ -7,11 +7,11 @@
             <i class="fa fa-bars"></i>
         </a>
         {navbar_links}
-            <a href="{link}" class="w3-bar-item w3-button w3-text-white w3-hover-none w3-hover-text-light-gray"><b>{name}</b></a>
+            <a href="{link}" class="w3-bar-item w3-button w3-text-white w3-hover-none w3-hover-text-black"><b>{name}</b></a>
         {/navbar_links}
 
-        <a href="{auth_link}" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-dark-gray">
-            {auth_label}</a>
+        <a href="{auth_link}" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-black">
+            <b>{auth_label}</b></a>
 
         <?php if( ! $user_logged): ?>
             <a href="{register_link}" class="w3-bar-item w3-button w3-right w3-margin-right w3-hover-none"><b>{register_label}</b></a>
