@@ -107,5 +107,17 @@ class Base_Controller extends CI_Controller {
         }
 
         $this->data['navbar_links'] = $navbar_links;
+
+        // Login
+        if ($this->ion_auth->logged_in())
+        {
+            $this->data['auth_link'] = base_url($this->config->item('login_action'));
+            $this->data['auth_label'] = 'Connexion';
+        }
+        else
+        {
+            $this->data['auth_link'] = base_url($this->config->item('logout_action'));
+            $this->data['auth_label'] = 'Déconnexion';
+        }
     }
 }

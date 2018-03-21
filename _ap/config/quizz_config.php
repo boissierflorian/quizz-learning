@@ -1,20 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-
-/*
-|--------------------------------------------------------------------------
-| Navigation bar links
-|--------------------------------------------------------------------------
-|
-| Static Navigation links..
-|
-*/
-$config['navbar_links'] = array(
-array('name' => 'Courses', 'link' => '/courses'),
-array('name' => 'Quizz', 'link' => '/quizz')
-);
-
 /*
 |--------------------------------------------------------------------------
 | Stylesheets Paths
@@ -42,3 +28,29 @@ array('link' => 'common')
 $config['scripts'] = array(
 array('link' => 'common'),
 );
+
+/*
+|--------------------------------------------------------------------------
+| Navigation bar links
+|--------------------------------------------------------------------------
+|
+| Static Navigation links..
+|
+*/
+$config['navbar_links'] = array(
+    array('name' => 'Courses', 'link' => '/courses'),
+    array('name' => 'Quizz', 'link' => '/quizz')
+);
+
+
+/*
+|--------------------------------------------------------------------------
+| Login/Logout actions
+|--------------------------------------------------------------------------
+|
+| Login/Logout controllers paths.
+|
+*/
+
+$config['login_action'] = '/login';
+$config['logout_action'] = '/logout';
