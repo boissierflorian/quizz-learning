@@ -16,8 +16,8 @@
 
     <body>
         {navbar}
-
-        <div class="w3-content">
+        <br><br>
+        <div class="w3-content w3-container" style="max-width: 1090px;">
             {content}
         </div>
 

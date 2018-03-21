@@ -12,6 +12,10 @@
 
         <a href="{auth_link}" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-dark-gray">
             {auth_label}</a>
+
+        <?php if( ! $user_logged): ?>
+            <a href="{register_link}" class="w3-bar-item w3-button w3-right w3-margin-right w3-hover-none"><b>{register_label}</b></a>
+        <?php endif; ?>
     </div>
 
     <div id="smallNavbar" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">

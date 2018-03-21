@@ -54,3 +54,4 @@ $config['navbar_links'] = array(
 
 $config['login_action'] = '/login';
 $config['logout_action'] = '/logout';
+$config['register_action'] = '/register';

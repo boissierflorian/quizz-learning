@@ -109,10 +109,12 @@ class Base_Controller extends CI_Controller {
         $this->data['navbar_links'] = $navbar_links;
 
         // Login
-        if ($this->ion_auth->logged_in())
+        if ( ! $this->ion_auth->logged_in())
         {
             $this->data['auth_link'] = base_url($this->config->item('login_action'));
             $this->data['auth_label'] = 'Connexion';
+            $this->data['register_link'] = base_url($this->config->item('register_action'));
+            $this->data['register_label'] = 'Inscription';
         }
         else
         {
