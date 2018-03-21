@@ -1,12 +1,23 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
-<h1>LOL</h1>
+<?php echo validation_errors(); ?>
 
-<?php for($i = 0; $i < 10; $i++): ?>
-<p>Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.<br />
-    Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un peintre anonyme assembla ensemble des<br />
-    morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi ad<br />
-    apté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de<br />
-    feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de<br />
-    texte, comme Aldus PageMaker.</p>
-<?php endfor; ?>
+<h1>{pagetitle}</h1>
+
+<div class="w3-container w3-content" style="max-width: 600px">
+    <?= form_open('login/login', array('class' => 'w3-margin-bottom')) ?>
+    <div class="w3-card-4 w3-padding-16">
+        <div class="w3-content w3-container">
+            <label><b>Pseudo</b></label>
+            <input class="w3-input w3-border" type="text" name="username" />
+            <label><b>Mot de passe</b></label>
+            <input class="w3-input w3-border" type="password" name="password" />
+            <input class="w3-check" type="checkbox" checked="checked">Se souvenir de moi
+            <br>
+            <a class="w3-hover-text-green" href="#">Mot de passe oublié ?</a>
+            <input class="w3-button w3-right w3-round-large w3-white w3-border w3-border-black w3-hover-white w3-hover-text-green w3-hover-border-green" type="submit" value="Se connecter" />
+        </div>
+    </div>
+
+    <?= form_close() ?>
+</div>

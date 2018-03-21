@@ -3,7 +3,7 @@
 <!-- Footer -->
 <footer class="w3-center w3-camo-black w3-padding-64 w3-row">
     <div class="w3-row">
-    <a href="<?= base_url() ?>" class="w3-button w3-forest w3-round-large w3-border w3-border-white w3-hover-text-green w3-hover-none">
+    <a href="<?= base_url() ?>" class="w3-button w3-forest w3-round-large w3-border w3-border-white w3-hover-text-green w3-hover-none w3-hover-border-green">
         <i class="fa fa-arrow-up w3-margin-right"></i><b>Haut de la page</b>
     </a>
     </div>

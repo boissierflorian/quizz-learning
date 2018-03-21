@@ -10,7 +10,7 @@
             <a href="{link}" class="w3-bar-item w3-button w3-text-white w3-hover-none w3-hover-text-black"><b>{name}</b></a>
         {/navbar_links}
 
-        <a href="{auth_link}" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-black">
+        <a href="{auth_link}" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-black w3-hover-border-black">
             <b>{auth_label}</b></a>
 
         <?php if( ! $user_logged): ?>

@@ -45,13 +45,28 @@ $config['navbar_links'] = array(
 
 /*
 |--------------------------------------------------------------------------
-| Login/Logout actions
+| Actions
 |--------------------------------------------------------------------------
 |
 | Login/Logout controllers paths.
 |
 */
-
 $config['login_action'] = '/login';
 $config['logout_action'] = '/logout';
 $config['register_action'] = '/register';
+
+
+/*
+|--------------------------------------------------------------------------
+| Captcha configuration
+|--------------------------------------------------------------------------
+|
+| Captcha generation configuration.
+|
+*/
+$config['captcha_folder'] = './public/captchas/';
+$config['captcha_url'] = 'public/captchas/';
+$config['captcha_img_width'] = 200;
+$config['captcha_img_height'] = 30;
+$config['captcha_expiration'] = 7200;
+$config['captcha_length'] = 8;

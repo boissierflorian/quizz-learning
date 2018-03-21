@@ -86,3 +86,13 @@ CREATE TABLE t_response(
   id_question INT NOT NULL,
   CONSTRAINT fk_response_question FOREIGN KEY (id_question) REFERENCES t_question(id_question)
 );
+
+DROP TABLE IF EXISTS t_captcha;
+CREATE TABLE t_captcha (
+  captcha_id bigint(13) unsigned NOT NULL auto_increment,
+  captcha_time int(10) unsigned NOT NULL,
+  ip_address varchar(45) NOT NULL,
+  word varchar(20) NOT NULL,
+  PRIMARY KEY `captcha_id` (`captcha_id`),
+  KEY `word` (`word`)
+);
