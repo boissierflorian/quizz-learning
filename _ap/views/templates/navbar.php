@@ -13,7 +13,7 @@
         <?php if($user_logged): ?>
             <a href="#" class="w3-bar-item w3-button w3-right">Déconnexion</a>
         <?php else: ?>
-            <a href="#" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border w3-border-white w3-hover-light-green w3-hover-text-white">Connexion</a>
+            <a href="#" class="w3-bar-item w3-button w3-right w3-green w3-round-large w3-border-white w3-border w3-hover-none w3-hover-text-dark-gray">Connexion</a>
         <?php endif; ?>
     </div>
 
