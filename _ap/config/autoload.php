@@ -79,7 +79,7 @@ $autoload['libraries'] = array('parser');
 |	$autoload['drivers'] = array('cache' => 'cch');
 |
 */
-$autoload['drivers'] = array('cache');
+$autoload['drivers'] = array();
 
 /*
 | -------------------------------------------------------------------

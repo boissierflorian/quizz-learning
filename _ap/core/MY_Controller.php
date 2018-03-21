@@ -37,6 +37,8 @@ class MY_Controller extends Auth_Controller {
         $this->data = array();
         $this->data['title'] = 'Quizz Learning';
         $this->errors = array();
+
+        $this->load->driver('cache');
         $this->load->helper('url_helper');
     }
 
