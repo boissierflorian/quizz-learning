@@ -38,6 +38,8 @@ class Base_Controller extends CI_Controller {
 
         $this->load->driver('cache');
         $this->load->helper('url_helper');
+
+        $this->_update_user_data();
     }
 
     /**
@@ -59,6 +61,15 @@ class Base_Controller extends CI_Controller {
 
         $this->data['data'] = &$this->data;
         $this->parser->parse('templates/base', $this->data);
+    }
+
+    /**
+     * Session data
+     */
+    private function _update_user_data()
+    {
+        $this->data['user_logged'] = $this->ion_auth->logged_in();
+        $this->data['user_admin'] = $this->ion_auth->is_admin();
     }
 
     /**

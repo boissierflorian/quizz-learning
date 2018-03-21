@@ -25,6 +25,7 @@ array('name' => 'Quizz', 'link' => '/quizz')
 */
 $config['stylesheets'] = array(
 array('link' => 'w3'),
+array('link' => 'w3-colors-camo'),
 array('link' => 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'),
 array('link' => 'common')
 );
