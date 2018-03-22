@@ -19,7 +19,6 @@ class Login extends Base_Controller {
 
     public function login()
     {
-        $this->output->enable_profiler(TRUE);
         if ($this->ion_auth->logged_in())
         {
             redirect('home');
