@@ -32,7 +32,7 @@ class Register extends Base_Controller {
             // Robot check
             if ($this->agent->is_robot())
             {
-                redirect('home');
+                redirect(base_url());
             }
 
             $username = $this->input->post('username', TRUE);
@@ -70,6 +70,5 @@ class Register extends Base_Controller {
         }
 
         return TRUE;
-
     }
 }

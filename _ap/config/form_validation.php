@@ -60,5 +60,31 @@ $config = array(
             'label' => 'Captcha',
             'rules' => 'callback_captcha_check'
         )
-    )
+    ),
+
+    'login/login' => array(
+        array(
+            'field' => 'username',
+            'label' => 'Pseudo/Email',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => 'Vous devez saisir votre pseudo !'
+            )
+        ),
+
+        array(
+            'field' => 'password',
+            'label' => 'Mot de passe',
+            'rules' => 'required',
+            'errors' => array(
+                'required' => 'Vous devez saisir un mot de passe !'
+            )
+        ),
+
+        array(
+            'field' => 'captcha',
+            'label' => 'Captcha',
+            'rules' => 'callback_captcha_check|required|trim',
+        )
+    ),
 );
