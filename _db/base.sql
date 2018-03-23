@@ -37,13 +37,17 @@ use quizz_learning;
 DROP TABLE IF EXISTS t_category;
 CREATE TABLE t_category(
   id_category INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  category_name VARCHAR(100) NOT NULL UNIQUE
+  category_name VARCHAR(100) NOT NULL UNIQUE,
+  color VARCHAR(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_course;
 CREATE TABLE t_course(
   id_course INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   id_category INT NOT NULL,
+  title VARCHAR(100) NOT NULL,
+  description VARCHAR(255) NOT NULL,
+  difficulty TINYINT(1) NOT NULL,
   content TEXT NOT NULL,
   id_author INT(11) unsigned NOT NULL,
   creation_date DATE NOT NULL,
@@ -88,4 +92,4 @@ CREATE TABLE t_captcha (
   KEY `word` (`word`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO t_category(category_name) VALUES ('XML'),('Webservices'), ('Apprentissage artificiel');
+INSERT INTO t_category(category_name, color) VALUES ('XML', 'red'),('Webservices', 'blue'), ('Apprentissage artificiel', 'yellow');

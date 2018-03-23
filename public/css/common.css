@@ -1,0 +1,21 @@
+.qz-card-row {
+    display: flex;
+}
+
+.qz-card-container {
+    flex: 1;
+}
+
+.qz-card-header {
+    flex-direction: column;
+    min-height: 140px;
+}
+
+.qz-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.qz-card-description {
+    min-height: 150px;
+}
