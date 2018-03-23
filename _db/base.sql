@@ -34,41 +34,32 @@ CREATE DATABASE quizz_learning
 
 use quizz_learning;
 
-DROP TABLE IF EXISTS t_user;
-CREATE TABLE t_user(
-  id_user INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  nickname VARCHAR(20) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL,
-  email VARCHAR(255) NOT NULL UNIQUE,
-  registration_date DATE NOT NULL
-);
-
 DROP TABLE IF EXISTS t_category;
 CREATE TABLE t_category(
   id_category INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   category_name VARCHAR(100) NOT NULL UNIQUE
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_course;
 CREATE TABLE t_course(
   id_course INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   id_category INT NOT NULL,
   content TEXT NOT NULL,
-  id_author INT NOT NULL,
+  id_author INT(11) unsigned NOT NULL,
   creation_date DATE NOT NULL,
   CONSTRAINT fk_course_category FOREIGN KEY (id_category) REFERENCES t_category(id_category),
-  CONSTRAINT fk_course_user FOREIGN KEY (id_author) REFERENCES t_user(id_user)
-);
+  CONSTRAINT fk_course_user FOREIGN KEY (id_author) REFERENCES t_users(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_quizz;
-CREATE TABLE t_quizz(
-  id_quizz INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+CREATE TABLE t_quizz (
+  id_quizz      INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
   creation_date DATE NOT NULL,
-  id_author INT NOT NULL,
-  id_course INT NOT NULL,
-  CONSTRAINT fk_quizz_user FOREIGN KEY (id_author) REFERENCES t_user(id_user),
+  id_author     INT(11) unsigned NOT NULL,
+  id_course     INT             NOT NULL,
+  CONSTRAINT fk_quizz_user FOREIGN KEY (id_author) REFERENCES t_users(id),
   CONSTRAINT fk_quizz_course FOREIGN KEY (id_course) REFERENCES t_course(id_course)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_question;
 CREATE TABLE t_question(
@@ -76,7 +67,7 @@ CREATE TABLE t_question(
   content VARCHAR(255) NOT NULL,
   id_quizz INT NOT NULL,
   CONSTRAINT fk_question_quizz FOREIGN KEY (id_quizz) REFERENCES t_quizz(id_quizz)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_response;
 CREATE TABLE t_response(
@@ -85,7 +76,7 @@ CREATE TABLE t_response(
   correct BIT(1) NOT NULL,
   id_question INT NOT NULL,
   CONSTRAINT fk_response_question FOREIGN KEY (id_question) REFERENCES t_question(id_question)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_captcha;
 CREATE TABLE t_captcha (
@@ -95,4 +86,4 @@ CREATE TABLE t_captcha (
   word varchar(20) NOT NULL,
   PRIMARY KEY `captcha_id` (`captcha_id`),
   KEY `word` (`word`)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
