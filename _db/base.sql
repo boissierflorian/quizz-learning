@@ -86,4 +86,6 @@ CREATE TABLE t_captcha (
   word varchar(20) NOT NULL,
   PRIMARY KEY `captcha_id` (`captcha_id`),
   KEY `word` (`word`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO t_category(category_name) VALUES ('XML'),('Webservices'), ('Apprentissage artificiel');
