@@ -5,7 +5,7 @@ $config = array(
         array(
             'field' => 'username',
             'label' => 'Pseudo',
-            'rules' => 'required|min_length[5]|max_length[12]|is_unique[users.username]|trim',
+            'rules' => 'required|min_length[5]|max_length[12]|is_unique[t_users.username]|trim',
             'errors' => array(
                 'required' => 'Vous devez spécifier un pseudo !',
                 'min_length' => "Votre pseudo doit être composé d'au moins 5 caractères !",
