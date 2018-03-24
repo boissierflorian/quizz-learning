@@ -19,3 +19,13 @@
 .qz-card-description {
     min-height: 150px;
 }
+
+.qz-step-bubble {
+    border-top: 2px solid gray;
+    content: '';
+    width: 10px;
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: -5px;
+    margin-left: -5px;
+}
