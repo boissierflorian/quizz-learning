@@ -12,3 +12,7 @@ function toggleElement(elementID) {
         x.className = x.className.replace("w3-show", "");
     }
 }
+
+function openLink(link) {
+    window.location.href = link;
+}

@@ -123,3 +123,21 @@ class Base_Controller extends CI_Controller {
         }
     }
 }
+
+/**
+ * Class MY_AuthController
+ *
+ * Controllers which requires authentication.
+ */
+class AuthController extends Base_Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+        if ( ! $this->ion_auth->logged_in())
+        {
+            redirect('login');
+        }
+    }
+}

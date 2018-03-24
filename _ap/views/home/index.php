@@ -10,7 +10,8 @@ $row_count = 0;
         <div class="w3-row qz-card-row">
     <?php endif; ?>
 
-    <div class="w3-card-2 w3-col m4 l3 w3-margin-right w3-margin-bottom w3-animate-top"">
+    <div class="w3-card-2 w3-col m4 l3 w3-margin-right w3-margin-bottom w3-animate-top w3-hover-opacity"
+         onclick="openLink('<?= base_url('course/view/' . $course['id_course']) ?>');">
         <header class="w3-container qz-card-container w3-red qz-card-header">
             <h6><?= $course['category_name'] ?></h6>
             <h5><?= $course['title'] ?></h5>
