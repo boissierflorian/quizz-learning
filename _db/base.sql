@@ -48,11 +48,20 @@ CREATE TABLE t_course(
   title VARCHAR(100) NOT NULL,
   description VARCHAR(255) NOT NULL,
   difficulty TINYINT(1) NOT NULL,
-  content TEXT NOT NULL,
   id_author INT(11) unsigned NOT NULL,
   creation_date DATE NOT NULL,
   CONSTRAINT fk_course_category FOREIGN KEY (id_category) REFERENCES t_category(id_category),
   CONSTRAINT fk_course_user FOREIGN KEY (id_author) REFERENCES t_users(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS t_step;
+CREATE TABLE t_step(
+  id_step INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  n_step INT NOT NULL,
+  step_title VARCHAR(100) NOT NULL,
+  content TEXT NOT NULL,
+  id_course INT NOT NULL,
+  CONSTRAINT fk_step_course FOREIGN KEY (id_course) REFERENCES t_course(id_course)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS t_quizz;
