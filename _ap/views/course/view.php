@@ -18,5 +18,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 <div class="w3-container w3-card-4 w3-margin-top w3-margin-bottom">
-    <?= $step_data['content'] ?>
+    <h3><?= $current_step ?>. <?= $step_title ?></h3>
+    <?= $step_content ?>
 </div>

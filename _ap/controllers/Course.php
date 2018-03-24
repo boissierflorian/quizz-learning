@@ -6,6 +6,7 @@ class Course extends AuthController {
     {
         parent::__construct();
         $this->load->model(array('course_model', 'step_model'));
+        $this->load->library('parsedown');
     }
 
     public function index()
@@ -33,11 +34,12 @@ class Course extends AuthController {
         $course = $course[0];
         $step = $this->step_model->get_step($step_number, $index);
 
-        $this->data['pagetitle'] = 'Course blabla';
+        $this->data['pagetitle'] = $course['title'];
         $this->data['pagebody'] = 'course/view';
         $this->data['course'] = $course;
         $this->data['course']['steps'] = $steps;
-        $this->data['step_data'] = $step;
+        $this->data['step_title'] = $step['step_title'];
+        $this->data['step_content'] = $this->parsedown->text($step['content']);
         $this->data['current_step'] = $step_number;
         $this->render();
     }
