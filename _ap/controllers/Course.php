@@ -17,7 +17,7 @@ class Course extends AuthController {
     public function view($index, $step_number = 1)
     {
         // TODO: Check
-        $this->output->enable_profiler(TRUE);
+        //$this->output->enable_profiler(TRUE);
         $course = $this->course_model->get_course($index);
         $steps = $this->step_model->get_steps($course[0]['id_course']);
 
@@ -37,10 +37,12 @@ class Course extends AuthController {
         $this->data['pagetitle'] = $course['title'];
         $this->data['pagebody'] = 'course/view';
         $this->data['course'] = $course;
-        $this->data['course']['steps'] = $steps;
+        $this->data['steps'] = $steps;
+        $this->data['steps_count'] = count($steps);
         $this->data['step_title'] = $step['step_title'];
         $this->data['step_content'] = $this->parsedown->text($step['content']);
         $this->data['current_step'] = $step_number;
+
         $this->render();
     }
 
