@@ -5,7 +5,7 @@ class Course extends AuthController {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model(array('course_model', 'step_model'));
+        $this->load->model(array('course_model', 'step_model', 'quizz_model'));
         $this->load->library('parsedown');
     }
 
@@ -34,6 +34,8 @@ class Course extends AuthController {
         $course = $course[0];
         $step = $this->step_model->get_step($step_number, $index);
 
+        $quizzes = $this->quizz_model->get_quizzes($index);
+
         $this->data['pagetitle'] = $course['title'];
         $this->data['pagebody'] = 'course/view';
         $this->data['course'] = $course;
@@ -42,17 +44,21 @@ class Course extends AuthController {
         $this->data['step_title'] = $step['step_title'];
         $this->data['step_content'] = $this->parsedown->text($step['content']);
         $this->data['current_step'] = $step_number;
+        $this->data['last_step'] = ($step_number == count($steps));
+        $this->data['quizzes_available'] = count($quizzes) > 0;
 
         $this->render();
     }
 
-    public function create()
+    public function quizzes($course_id)
     {
-        // Create a course
-    }
+        $course = $this->course_model->get_course($course_id)[0];
+        $quizzes = $this->quizz_model->get_quizzes($course_id);
 
-    public function edit()
-    {
-        // Edit a course
+        $this->data['pagetitle'] = 'Quizzes';
+        $this->data['pagebody'] = 'course/quizzes';
+        $this->data['course'] = $course;
+        $this->data['quizzes'] = $quizzes;
+        $this->render();
     }
 }

@@ -20,4 +20,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="w3-container w3-card-4 w3-margin-top w3-margin-bottom">
     <h3><?= $current_step ?>. <?= $step_title ?></h3>
     <?= $step_content ?>
+
+    <?php if ($quizzes_available): ?>
+        <?php if($last_step): ?>
+            <div class="w3-center w3-margin-bottom">
+                <a href="<?= base_url('course/quizzes/' . $course['id_course']) ?>" class="w3-button w3-border w3-green w3-border-light-grey">Accéder aux quizzes !</a>
+            </div>
+        <?php endif; ?>
+    <?php else: ?>
+        <p class="w3-center"><i>Aucun quizz n'a été trouvé pour ce cours. Créer en un maintenant !</i></p>
+    <?php endif; ?>
 </div>

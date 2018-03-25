@@ -62,6 +62,7 @@ CREATE TABLE t_step(
 DROP TABLE IF EXISTS t_quizz;
 CREATE TABLE t_quizz (
   id_quizz      INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  quizz_title VARCHAR(100) NOT NULL,
   creation_date DATE NOT NULL,
   id_author     INT(11) unsigned NOT NULL,
   id_course     INT             NOT NULL,
@@ -108,4 +109,16 @@ INSERT INTO t_course(id_category, title, description, difficulty, id_author, cre
 INSERT INTO t_step(n_step, step_title, content, id_course)
     VALUES (1, 'Installation des outils', 'test', 1),
       (2, 'Lancement du script de base', 'test', 1),
-      (3, 'Blabla', 'test', 1)
+      (3, 'Blabla', 'test', 1);
+
+INSERT INTO t_quizz(quizz_title, creation_date, id_author, id_course)
+  VALUES ('Premier quizz xml', '2018-03-20', 1, 1),
+    ('Deuxième quizz xml', '2018-03-20', 1, 1);
+
+INSERT INTO t_question(content, id_quizz)
+  VALUES('En quelle année a été créé le XML ?', 1),
+    ('En quelle année a été créé le XML2 ?', 2);
+
+INSERT INTO t_response(content, correct, id_question) VALUES
+  ('En 2004', 0, 1), ('En 2010', 0, 1), ('En 2005', 1, 1), ('En 2009', 0, 1),
+  ('En 2004', 1, 2), ('En 2010', 0, 2), ('En 2005', 0, 2), ('En 2009', 0, 2);
