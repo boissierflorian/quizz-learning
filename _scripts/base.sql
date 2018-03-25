@@ -26,11 +26,6 @@
   Version: 1.0
 */
 
-DROP DATABASE IF EXISTS quizz_learning;
-
-CREATE DATABASE quizz_learning
-  DEFAULT CHARACTER SET utf8
-  DEFAULT COLLATE utf8_general_ci;
 
 use quizz_learning;
 
@@ -102,3 +97,15 @@ CREATE TABLE t_captcha (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO t_category(category_name, color) VALUES ('XML', 'red'),('Webservices', 'blue'), ('Apprentissage artificiel', 'yellow');
+INSERT INTO t_course(id_category, title, description, difficulty, id_author, creation_date)
+  VALUES(1, 'Présentation du xml', 'Un cours de xml', 1, 1, '2018-03-23'),
+  (2, 'Présentation des webservices', 'Une courte présentation sur l\'utilité des webservices !', 2, 1, '2018-03-20'),
+  (3, 'Présentation de l\'apprentissage articifiel', 'LAA un sujet assez vaste !', 3, 1, '2018-03-24'),
+  (1, 'Cours sur les DTD', 'Un cours sur les DTD', 4, 1, '2018-02-23'),
+  (1, 'Cours sur les XML Schemas', 'Un cour sur les xml schemas', 5, 1, '2018-01-23'),
+  (1, 'Ajax XML', 'Un cour sur ajax couplé au xml', 0, 1, '2018-01-25');
+
+INSERT INTO t_step(n_step, step_title, content, id_course)
+    VALUES (1, 'Installation des outils', 'test', 1),
+      (2, 'Lancement du script de base', 'test', 1),
+      (3, 'Blabla', 'test', 1)
