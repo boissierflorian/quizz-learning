@@ -53,6 +53,7 @@ $route['login'] = 'login/login';
 $route['auth'] = 'auth';
 $route['register'] = 'register/signup';
 $route['course'] = 'course';
+$route['quizz'] = 'quizz';
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
